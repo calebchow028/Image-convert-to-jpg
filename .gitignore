@@ -1,0 +1,12 @@
+# Ignore images
+*.jpg
+*.jpeg
+*.png
+*.heic
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environment
+venv/
