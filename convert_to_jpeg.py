@@ -10,8 +10,8 @@ import pillow_heif
 #register HEIC/HEIF support with pillow
 pillow_heif.register_heif_opener()
 
-#the folder that has images wanting to convert (change "." to the actual path)
-input_folder = "."
+#the folder that has images wanting to convert (change "Input" to any path you want)
+input_folder = "Input"
 
 #go through every file in the image folder
 for filename in os.listdir(input_folder):
@@ -32,7 +32,9 @@ for filename in os.listdir(input_folder):
     try:
         #set im as the opened image and close it afterwards
         with Image.open(input) as im:
-            im.save(output)
+            #convert any mode to RGB
+            rgb_im = im.convert("RGB")
+            rgb_im.save(output)
 
             #print message
             print(f"Convert {input} > {output}")
